@@ -1,12 +1,13 @@
 # --- Importar as bibliotecas --- #
 from typing import Tuple
 from modos_gregos import *
+from pentatonicas import *
 from tabulate import tabulate
 
 
 class ModosGregos:
     """
-    Classe responsável por armazenar as escalas.
+    Classe responsável por criar as tabelas dos Modos Gregos.
     """
 
     def jonio(self, tom) -> Tuple[str, str, str, str]:
@@ -30,12 +31,13 @@ class ModosGregos:
             V = notas[4]
             VI = notas[5]
             VII = notas[6]
+            VIII = notas[7]
 
             # --- Tabela com as notas --- #
-            graus = [[I, II, III, IV, V, VI, VII]]
+            graus = [[I, II, III, IV, V, VI, VII, VIII]]
             tabela_graus = tabulate(
                 tabular_data=graus,
-                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
+                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'],
                 tablefmt='html'
             )
 
@@ -86,12 +88,13 @@ class ModosGregos:
             V = notas[4]
             VI = notas[5]
             VII = notas[6]
+            VIII = notas[7]
 
             # --- Tabela com as notas --- #
-            graus = [[I, II, III, IV, V, VI, VII]]
+            graus = [[I, II, III, IV, V, VI, VII, VIII]]
             tabela_graus = tabulate(
                 tabular_data=graus,
-                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
+                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'],
                 tablefmt='html'
             )
 
@@ -142,12 +145,13 @@ class ModosGregos:
             V = notas[4]
             VI = notas[5]
             VII = notas[6]
+            VIII = notas[7]
 
             # --- Tabela com as notas --- #
-            graus = [[I, II, III, IV, V, VI, VII]]
+            graus = [[I, II, III, IV, V, VI, VII, VIII]]
             tabela_graus = tabulate(
                 tabular_data=graus,
-                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
+                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'],
                 tablefmt='html'
             )
 
@@ -198,12 +202,13 @@ class ModosGregos:
             V = notas[4]
             VI = notas[5]
             VII = notas[6]
+            VIII = notas[7]
 
             # --- Tabela com as notas --- #
-            graus = [[I, II, III, IV, V, VI, VII]]
+            graus = [[I, II, III, IV, V, VI, VII, VIII]]
             tabela_graus = tabulate(
                 tabular_data=graus,
-                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
+                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'],
                 tablefmt='html'
             )
 
@@ -254,12 +259,13 @@ class ModosGregos:
             V = notas[4]
             VI = notas[5]
             VII = notas[6]
+            VIII = notas[7]
 
             # --- Tabela com as notas --- #
-            graus = [[I, II, III, IV, V, VI, VII]]
+            graus = [[I, II, III, IV, V, VI, VII, VIII]]
             tabela_graus = tabulate(
                 tabular_data=graus,
-                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
+                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'],
                 tablefmt='html'
             )
 
@@ -310,12 +316,13 @@ class ModosGregos:
             V = notas[4]
             VI = notas[5]
             VII = notas[6]
+            VIII = notas[7]
 
             # --- Tabela com as notas --- #
-            graus = [[I, II, III, IV, V, VI, VII]]
+            graus = [[I, II, III, IV, V, VI, VII, VIII]]
             tabela_graus = tabulate(
                 tabular_data=graus,
-                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
+                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'],
                 tablefmt='html'
             )
 
@@ -366,12 +373,13 @@ class ModosGregos:
             V = notas[4]
             VI = notas[5]
             VII = notas[6]
+            VIII = notas[7]
 
             # --- Tabela com as notas --- #
-            graus = [[I, II, III, IV, V, VI, VII]]
+            graus = [[I, II, III, IV, V, VI, VII, VIII]]
             tabela_graus = tabulate(
                 tabular_data=graus,
-                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
+                headers=['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'],
                 tablefmt='html'
             )
 
@@ -400,3 +408,68 @@ class ModosGregos:
             )
 
             return tabela_graus, tabela_disposicao, tabela_intervalos, tabela_acordes
+
+
+class Pentatonicas:
+    """
+    Classe responsável por crias as tabelas das Pentatônicas.
+    """
+
+    def maior(self, tom) -> str:
+        """
+        Função responsável por criar as tabelas da Pentatônica maior.
+        :param tom: Tom da escala.
+        :return: String com a tabela.
+        """
+        # --- Tratar a informação --- #
+        try:
+            notas = maior[tom]
+        except KeyError:
+            return 'O tom não foi selecionado.'
+        else:
+            # --- Separar os graus --- #
+            I = notas[0]
+            II = notas[1]
+            III = notas[2]
+            V = notas[3]
+            VI = notas[4]
+
+            # --- Tabela com as notas --- #
+            graus = [[I, II, III, V, VI]]
+            tabela_graus = tabulate(
+                tabular_data=graus,
+                headers=['I', 'II', 'III', 'V', 'VI'],
+                tablefmt='html'
+            )
+
+            return tabela_graus
+
+    def menor(self, tom) -> str:
+        """
+        Função responsável por criar as tabelas da Pentatônica menor.
+        :param tom: Tom da escala.
+        :return: String com a tabela.
+        """
+        # --- Tratar a informação --- #
+        try:
+            notas = menor[tom]
+        except KeyError:
+            return 'O tom não foi selecionado.'
+        else:
+            # --- Separar os graus --- #
+            I = notas[0]
+            II = notas[1]
+            III = notas[2]
+            V = notas[3]
+            VI = notas[4]
+
+            # --- Tabela com as notas --- #
+            graus = [[I, II, III, V, VI]]
+            tabela_graus = tabulate(
+                tabular_data=graus,
+                headers=['I', 'II', 'III', 'V', 'VI'],
+                tablefmt='html'
+            )
+
+            return tabela_graus
+
